@@ -81,4 +81,8 @@ body
         inset: 0;
         margin: auto;
     }
+    .left, .right
+    {
+        display: none;
+    }
 }
