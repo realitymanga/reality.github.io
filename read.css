@@ -1,0 +1,84 @@
+@font-face 
+{
+    font-family: WildWords;
+    src: url("wildwordsroman.TTF");
+}
+body
+{
+    margin: 0;
+}
+.page
+{
+    height: 100%;
+    z-index: 1;
+    aspect-ratio: 821/1200;
+    background-image: url(pages/ch1/ch0100.gif);
+    background-size: cover;
+    margin: 0 auto;
+    position: relative;
+    transition: none;
+}
+.left, .right
+{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70px;
+    width: 100px;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    margin: 0;
+}
+.left
+{
+    left: 0;
+    background-image: url(icons/arrow-left.png);
+}
+.right
+{
+    right: 0;
+    background-image: url(icons/arrow-right.png);
+}
+.left:hover, .right:hover
+{
+    opacity: 1;
+}
+.pageCount
+{
+    text-align: center;
+    width: 80px;
+    height: 30px;
+    align-content: center;
+    text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+    color: black;   
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 22px;
+    font-family: WildWords;
+}
+@media only screen and (max-width: 800px) {
+    .all
+    {
+        padding: 0;
+    }
+    .logo
+    {
+        z-index: 3;
+        width: 40%;
+        height: fit-content;
+        margin: 0 auto;
+    }
+    .page
+    {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 821/1200;
+        position: absolute;
+        inset: 0;
+        margin: auto;
+    }
+}
