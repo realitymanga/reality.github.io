@@ -14,6 +14,25 @@ var page = document.getElementsByClassName("page");
 
 const numOfPages = [23, 3];
 
+const images = [];
+for (let i = 0; i <= numOfPages[chNum-1]; i++) 
+{
+    const img = new Image();
+    if(i<10)
+        img.src = "pages/ch"+chNum+"/ch0"+chNum+"0"+i+".gif";
+    else
+        img.src = "pages/ch"+chNum+"/ch0"+chNum+i+".gif";
+    images.push(img);
+    // Optional: Log to indicate image loading success
+    img.onload = () => {
+      console.log(`Image ${i + 1} loaded successfully`);
+    };
+  
+    // Optional: Log if there is an error loading an image
+    img.onerror = () => {
+      console.error(`Failed to load image ${i + 1}`);
+    };
+}
 count.innerHTML=pgNum+"/"+numOfPages[chNum-1];
 
 function pgDown()
@@ -23,11 +42,8 @@ function pgDown()
         if(pgNum>0)
         {   
             pgNum--;
-            if(pgNum<10)
-                element.style.backgroundImage = "url(pages/ch"+chNum+"/ch0"+chNum+"0"+pgNum+".gif)";
-            else
-                element.style.backgroundImage = "url(pages/ch"+chNum+"/ch0"+chNum+pgNum+".gif)";
-            count.innerHTML=pgNum+"/"+numOfPages[chNum-1];
+            element.style.backgroundImage = `url(${images[pgNum].src})`;
+            count.innerHTML=pgNum+"/"+numOfPages[chNum-1];  
         }
     });
     
@@ -40,10 +56,7 @@ function pgUp()
         if(pgNum<numOfPages[chNum-1])
         {
             pgNum++;
-            if(pgNum<10)
-                element.style.backgroundImage = "url(pages/ch"+chNum+"/ch0"+chNum+"0"+pgNum+".gif)";
-            else
-                element.style.backgroundImage = "url(pages/ch"+chNum+"/ch0"+chNum+pgNum+".gif)";
+            element.style.backgroundImage = `url(${images[pgNum].src})`;
             count.innerHTML=pgNum+"/"+numOfPages[chNum-1];    
         }
     });
@@ -105,10 +118,10 @@ function handleTouchMove(evt) {
     } else {
         if ( yDiff > 0 ) {
             /* down swipe */
-            document.getElementById("logo").style.opacity = "1";
+            document.getElementById("logo").style.opacity = "0";
         } else { 
             /* up swipe */
-            document.getElementById("logo").style.opacity = "0";
+            document.getElementById("logo").style.opacity = "1";
         }                                                                 
     }
     /* reset values */

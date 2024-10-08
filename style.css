@@ -245,4 +245,8 @@ body
     {
         width: fit-content;
     }
+    .margin
+    {
+        width: 100%;
+    }
 }
