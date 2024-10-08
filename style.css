@@ -53,7 +53,7 @@ body
 {
     position: relative;
     width: 360px;
-    height: 250px;
+    height: fit-content;
     margin-left: 10%;
 }
 .link
@@ -63,7 +63,7 @@ body
     float: left;
     text-decoration: none;
     font-size: 30px;
-    height: 20%;
+    height: 50px;
     color: var(--main);
 }
 .links:hover .link
@@ -98,6 +98,34 @@ body
     text-decoration: underline 2px;
 }
 
+.soc
+{
+    position: absolute;
+    width: fit-content;
+    bottom: 5%;
+}
+#ig, #x
+{
+    height: 40px;
+    width: 40px;
+    float: left;
+    margin-right: 10px;
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#ig
+{
+    background-image: url(icons/instagram.svg);
+}
+#x
+{
+    background-image: url(icons/twitter.svg);
+}
+.soc .link
+{
+    opacity: 1;
+}
 
 .chapters
 {
