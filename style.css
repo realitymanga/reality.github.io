@@ -104,7 +104,7 @@ body
     width: fit-content;
     bottom: 5%;
 }
-#ig, #x
+#ig, #x, #pat
 {
     height: 40px;
     width: 40px;
@@ -121,6 +121,10 @@ body
 #x
 {
     background-image: url(icons/twitter.svg);
+}
+#pat
+{
+    background-image: url(icons/patreon-icon.svg);
 }
 .soc .link
 {
